@@ -1,23 +1,17 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import CalculatorButtons from './CalculatorButtons'; 
 
 function App() {
+
+  const handleButtonClick = (label) => {
+    // Implement your logic here based on the tips provided earlier
+  };
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <CalculatorButtons onButtonClick={handleButtonClick} />
     </div>
   );
 }
