@@ -12,16 +12,15 @@ function App() {
   const [input, setInput] = useState('')
   const [result, setResult] = useState('')
   const handleButtonClick = (label) => {
-    // Implement your logic here based on the tips provided earlier
 
     // if number clicked, append to input 
     if (!isNaN(label)) {
       const newInput = label;
       setInput(newInput);
 
-      console.log("input", input);
-      console.log("newInput", newInput);
-      console.log("result", result);
+      console.log("input", input); // previous clicked number 
+      console.log("newInput", newInput); // clicked number 
+      console.log("result", result); // logs nothing 
     } else {
       alert("i see u :icu:");
     };
