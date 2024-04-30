@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
+import TextField from '@mui/material/TextField';
 import CalculatorButtons from './CalculatorButtons'; 
 
 function App() {
@@ -32,14 +33,12 @@ function App() {
     // if C button clicked, clear last entry from input 
     
     // if = button clicked, evaluate expression in input and update result 
-    
-
   };
-
 
   return (
     <div className="container">
-      <div className='display'>{input}</div>
+      <TextField className="display" id="outlined-basic" variant="outlined" value={input}/>
+      {/* <div className='display'>{input}</div> */}
       <CalculatorButtons onButtonClick={handleButtonClick} />
     </div>
   );
