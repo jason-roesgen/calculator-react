@@ -11,8 +11,6 @@ function App() {
 
   const [input, setInput] = useState('')
   const [result, setResult] = useState('')
-
-
   const handleButtonClick = (label) => {
     // Implement your logic here based on the tips provided earlier
 
@@ -42,6 +40,7 @@ function App() {
 
   return (
     <div className="container">
+      <div className='display'>{input}</div>
       <CalculatorButtons onButtonClick={handleButtonClick} />
     </div>
   );
