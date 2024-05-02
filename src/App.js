@@ -16,12 +16,13 @@ function App() {
 
     // if number clicked, append to input 
     if (!isNaN(label)) {
-      const newInput = label;
+      const newInput = input + label;
       setInput(newInput);
 
       console.log("input", input); // previous clicked number 
       console.log("newInput", newInput); // clicked number 
       console.log("result", result); // logs nothing 
+      console.log("setResult", setResult); // ion know
     } else {
       alert("i see u :icu:");
     };
