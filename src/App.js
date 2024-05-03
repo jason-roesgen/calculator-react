@@ -11,15 +11,16 @@ function App() {
     if (!isNaN(label)) {
       const newInput = input + label;
       setInput(newInput);
-} else {
+    } else if (label === "AC") {
+      setInput('');
+      console.log("input: ", input);
+    } else if (label === "C" ) {
+        const newInput = input.slice(0, -1);
+        setInput(newInput);
+    } else {
       alert("Fuktion noch nicht verfügbar");
     };
-
     // if operator clicked, update to input to include the operator 
-    
-    // if AC button clicked, clear both input and result
-    
-    // if C button clicked, clear last entry from input 
     
     // if = button clicked, evaluate expression in input and update result 
   };
