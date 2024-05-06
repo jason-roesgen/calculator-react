@@ -1,6 +1,20 @@
-.calculator-frame {
-  width: 240px; /* Adjust the width as needed */
+.container {
   border: 2px solid #333;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 50px;
+  border-radius: 15px;
+}
+
+.display {
+  width: 230px;
+  padding: 25px 25px 0 25px;
+  margin-top: 25px !important; 
+}
+
+.calculator-frame {
+  border: 0; 
+  width: 240px; /* Adjust the width as needed */
   border-radius: 8px;
   padding: 20px;
   display: flex;
