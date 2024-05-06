@@ -9,13 +9,11 @@ function App() {
 
     // if number clicked, append to input 
     if (!isNaN(label)) {
-      const newInput = input + label;
-      setInput(newInput);
+      setInput((prevInput) => prevInput + label);
     } else if (label === "AC") {
       setInput('');
       console.log("input: ", input);
     } else if (label === "C" ) {
-        const newInput = input.slice(0, -1);
         setInput((prevInput) => prevInput.slice(0, -1));
     } else {
       alert("Fuktion noch nicht verfügbar");
