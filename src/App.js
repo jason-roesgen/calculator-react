@@ -16,14 +16,22 @@ function App() {
     } else if (label === "C" ) {
         setInput((prevInput) => prevInput.slice(0, -1));
     } else if (['+', '-', '*', '/'].includes(label)) {
-    // if operator clicked, update to input to include the operator 
+      // if operator clicked, update to input to include the operator 
       if (!['+', '-', '*', '/'].includes(input.slice(-1))) {
         setInput((prevInput) => prevInput + label);
       }
+    } else if (label === "=") {
+      // if = button clicked, evaluate expression in input and update result 
+      try {
+        const result = eval(input);
+        setInput(result.toString());
+      } catch (error) {
+        alert("Berechnung ungültig");
+      }
+
     } else {
       alert("Funktion noch nicht verfügbar");
     };
-    // if = button clicked, evaluate expression in input and update result 
   };
 
   return (
