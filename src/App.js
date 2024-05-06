@@ -15,7 +15,7 @@ function App() {
       console.log("input: ", input);
     } else if (label === "C" ) {
         setInput((prevInput) => prevInput.slice(0, -1));
-    } else if (['+', '-', '*', '/'].includes(label)) {
+      } else if (['+', '-', '*', '/'].includes(label)) {
       // if operator clicked, update to input to include the operator 
       if (!['+', '-', '*', '/'].includes(input.slice(-1))) {
         setInput((prevInput) => prevInput + label);
@@ -24,13 +24,17 @@ function App() {
       // if = button clicked, evaluate expression in input and update result 
       try {
         const result = eval(input);
+        if (!isFinite(result)) {
+          // Handle division by zero
+          throw new Error("Es ist nicht möglich durch 0 zu dividieren!");
+        }
         setInput(result.toString());
       } catch (error) {
-        alert("Berechnung ungültig");
+        alert(error.message);
       }
 
     } else {
-      alert("Funktion noch nicht verfügbar");
+      alert("Funktion noch nicht verfügbar!");
     };
   };
 
