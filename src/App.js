@@ -16,7 +16,7 @@ function App() {
       console.log("input: ", input);
     } else if (label === "C" ) {
         const newInput = input.slice(0, -1);
-        setInput(newInput);
+        setInput((prevInput) => prevInput.slice(0, -1));
     } else {
       alert("Fuktion noch nicht verfügbar");
     };
