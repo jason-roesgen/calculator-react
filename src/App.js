@@ -9,7 +9,6 @@ function App() {
 
     // if number clicked, append to input 
     if (!isNaN(label)) {
-      const newInput = input + label;
       setInput((prevInput) => prevInput + label);
 } else {
       alert("Fuktion noch nicht verfügbar");
