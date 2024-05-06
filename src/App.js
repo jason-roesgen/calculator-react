@@ -15,11 +15,14 @@ function App() {
       console.log("input: ", input);
     } else if (label === "C" ) {
         setInput((prevInput) => prevInput.slice(0, -1));
-    } else {
-      alert("Fuktion noch nicht verfügbar");
-    };
+    } else if (['+', '-', '*', '/'].includes(label)) {
     // if operator clicked, update to input to include the operator 
-    
+      if (!['+', '-', '*', '/'].includes(input.slice(-1))) {
+        setInput((prevInput) => prevInput + label);
+      }
+    } else {
+      alert("Funktion noch nicht verfügbar");
+    };
     // if = button clicked, evaluate expression in input and update result 
   };
 
