@@ -10,15 +10,15 @@ function App() {
     // if number clicked, append to input 
     if (!isNaN(label)) {
       setInput((prevInput) => prevInput + label);
-} else {
+    } else if (label === "AC") {
+      setInput('');
+      console.log("input: ", input);
+    } else if (label === "C" ) {
+        setInput((prevInput) => prevInput.slice(0, -1));
+    } else {
       alert("Fuktion noch nicht verfügbar");
     };
-
     // if operator clicked, update to input to include the operator 
-    
-    // if AC button clicked, clear both input and result
-    
-    // if C button clicked, clear last entry from input 
     
     // if = button clicked, evaluate expression in input and update result 
   };
