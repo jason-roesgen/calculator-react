@@ -1,5 +1,5 @@
-import React from 'react';
-import './Button.css'; // Import CSS for styling
+import React from "react";
+import "./Button.css"; // Import CSS for styling
 
 const Button = ({ label, onClick }) => {
   return (
