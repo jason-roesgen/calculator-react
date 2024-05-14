@@ -5,8 +5,9 @@ import CalculatorButtons from './CalculatorButtons';
 
 function App() {
   const [input, setInput] = useState('')
-  const handleButtonClick = (label) => {
-
+  const MathOperators = ['+', '-', '*', '/'];
+  
+  const handleButtonClick = (label) => { 
     // if number clicked, append to input 
     if (!isNaN(label)) {
       setInput((prevInput) => prevInput + label);
@@ -15,9 +16,9 @@ function App() {
       console.log("input: ", input);
     } else if (label === "C" ) {
         setInput((prevInput) => prevInput.slice(0, -1));
-    } else if (['+', '-', '*', '/'].includes(label)) {
+    } else if (MathOperators.includes(label)) {
     // if operator clicked, update to input to include the operator 
-      if (!['+', '-', '*', '/'].includes(input.slice(-1))) {
+      if (!MathOperators.includes(input.slice(-1))) {
         setInput((prevInput) => prevInput + label);
       }
     } else {
