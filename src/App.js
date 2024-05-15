@@ -3,9 +3,10 @@ import './App.css';
 import TextField from '@mui/material/TextField';
 import CalculatorButtons from './CalculatorButtons'; 
 
+const MathOperators = ['+', '-', '*', '/'];
+
 function App() {
   const [input, setInput] = useState('')
-  const MathOperators = ['+', '-', '*', '/'];
   
   const handleButtonClick = (label) => { 
     // if number clicked, append to input 
