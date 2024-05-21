@@ -3,20 +3,23 @@ import "./App.css";
 import TextField from "@mui/material/TextField";
 import CalculatorButtons from "./CalculatorButtons";
 
+const MathOperators = ['+', '-', '*', '/'];
+
 function App() {
-  const [input, setInput] = useState("");
-  const handleButtonClick = (label) => {
-    // if number clicked, append to input
+  const [input, setInput] = useState('')
+  
+  const handleButtonClick = (label) => { 
+    // if number clicked, append to input 
     if (!isNaN(label)) {
       setInput((prevInput) => prevInput + label);
     } else if (label === "AC") {
       setInput("");
       console.log("input: ", input);
-    } else if (label === "C") {
-      setInput((prevInput) => prevInput.slice(0, -1));
-    } else if (["+", "-", "*", "/"].includes(label)) {
-      // if operator clicked, update to input to include the operator
-      if (!["+", "-", "*", "/"].includes(input.slice(-1))) {
+    } else if (label === "C" ) {
+        setInput((prevInput) => prevInput.slice(0, -1));
+    } else if (MathOperators.includes(label)) {
+    // if operator clicked, update to input to include the operator 
+      if (!MathOperators.includes(input.slice(-1))) {
         setInput((prevInput) => prevInput + label);
       }
     } else if (label === "=") {
